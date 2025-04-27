@@ -1,0 +1,79 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: #1a1a2e;
+  --text: #e2e8f0;
+  --accent: #8b5cf6;
+  --accent-hover: #7c3aed;
+  --border: #2a2a3f;
+  --hover: #252538;
+  --secondary: #94a3b8;
+  --github: #6cc644;
+  --twitter: #1da1f2;
+  --linkedin: #0077b5;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--background);
+  color: var(--text);
+  font-family: 'Inter', sans-serif;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+@layer components {
+  .container-custom {
+    @apply max-w-4xl mx-auto px-6 md:px-8;
+  }
+  
+  .section-spacing {
+    @apply py-12 md:py-16;
+  }
+  
+  .section-border {
+    @apply border-t border-[var(--border)];
+  }
+  
+  .content-column {
+    @apply max-w-2xl mx-auto;
+  }
+  
+  .link {
+    @apply text-[var(--accent)] hover:text-[var(--accent-hover)] transition-all duration-300 ease-in-out;
+  }
+  
+  .section-title {
+    @apply text-2xl font-medium mb-8 text-center;
+  }
+  
+  .fade-in {
+    @apply opacity-0 translate-y-4 transition-all duration-500 ease-out;
+  }
+  
+  .fade-in.visible {
+    @apply opacity-100 translate-y-0;
+  }
+
+  .social-link {
+    @apply transition-transform duration-300 hover:scale-110;
+  }
+
+  .social-link.github {
+    @apply text-[var(--github)] hover:opacity-80 transition-opacity duration-300;
+  }
+
+  .social-link.twitter {
+    @apply text-[var(--twitter)] hover:opacity-80 transition-opacity duration-300;
+  }
+
+  .social-link.linkedin {
+    @apply text-[var(--linkedin)] hover:opacity-80 transition-opacity duration-300;
+  }
+}
